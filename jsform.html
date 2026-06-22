@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        Registration Form
+    </div>
+    <div class="form-box">
+        <div class="row">
+            <div class="field">
+                <label>First Name</label>
+                <input type="text" id="fname">
+            </div>
+            <div class="field">
+                <label>Last Name</label>
+                <input type="text" id="lname">
+            </div>
+        </div>
+        <div class="full">
+            <label>Email Address</label>
+            <input type="email" id="email">
+        </div>
+        <div class="full">
+            <label>Phone</label>
+            <input type="tel" id="phone">
+        </div>
+        <div class="row">
+            <div class="field">
+                <label>City</label>
+                <select id="city">
+                    <option>London</option>
+                    <option>Chennai</option>
+                    <option>Mumbai</option>
+                </select>
+            </div>
+            <div class="field">
+                <label>Country</label>
+                <select id="country">
+                    <option>India</option>
+                    <option>UK</option>
+                    <option>USA</option>
+                </select>
+            </div>
+        </div>
+        <button onclick="showData()">Get Started</button>
+        <div id="result"></div>
+    </div>
+</div>
+<script>
+function showData(){
+
+let fname=document.getElementById("fname").value;
+let lname=document.getElementById("lname").value;
+let email=document.getElementById("email").value;
+let phone=document.getElementById("phone").value;
+let city=document.getElementById("city").value;
+let country=document.getElementById("country").value;
+document.getElementById("result").innerHTML=
+"<h3>Entered Details</h3>"+
+"First Name : "+fname+"<br>"+
+"Last Name : "+lname+"<br>"+
+"Email : "+email+"<br>"+
+"Phone : "+phone+"<br>"+
+"City : "+city+"<br>"+
+"Country : "+country;
+
+}
+</script>
+</body>
+</html>

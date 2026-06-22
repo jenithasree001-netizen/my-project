@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Analog Clock</title>
+
+<style>
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#f5f5f5;
+}
+
+.clock{
+    width:350px;
+    height:350px;
+    border:10px solid black;
+    border-radius:50%;
+    background:white;
+    position:relative;
+}
+
+.number{
+    position:absolute;
+    font-size:30px;
+    font-weight:bold;
+}
+
+.n12{top:10px;left:50%;transform:translateX(-50%);}
+.n1{top:30px;right:85px;}
+.n2{top:85px;right:30px;}
+.n3{top:50%;right:10px;transform:translateY(-50%);}
+.n4{bottom:85px;right:30px;}
+.n5{bottom:30px;right:85px;}
+.n6{bottom:10px;left:50%;transform:translateX(-50%);}
+.n7{bottom:30px;left:85px;}
+.n8{bottom:85px;left:30px;}
+.n9{top:50%;left:10px;transform:translateY(-50%);}
+.n10{top:85px;left:30px;}
+.n11{top:30px;left:85px;}
+
+.hand{
+    position:absolute;
+    bottom:50%;
+    left:50%;
+    transform-origin:bottom;
+}
+
+.hour{
+    width:8px;
+    height:80px;
+    background:black;
+    margin-left:-4px;
+}
+
+.minute{
+    width:5px;
+    height:110px;
+    background:black;
+    margin-left:-2.5px;
+}
+
+.second{
+    width:2px;
+    height:130px;
+    background:black;
+    margin-left:-1px;
+}
+
+.center{
+    width:15px;
+    height:15px;
+    background:black;
+    border-radius:50%;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+}
+</style>
+
+</head>
+<body>
+
+<div class="clock">
+
+<div class="number n12">12</div>
+<div class="number n1">1</div>
+<div class="number n2">2</div>
+<div class="number n3">3</div>
+<div class="number n4">4</div>
+<div class="number n5">5</div>
+<div class="number n6">6</div>
+<div class="number n7">7</div>
+<div class="number n8">8</div>
+<div class="number n9">9</div>
+<div class="number n10">10</div>
+<div class="number n11">11</div>
+
+<div class="hand hour" id="hour"></div>
+<div class="hand minute" id="minute"></div>
+<div class="hand second" id="second"></div>
+
+<div class="center"></div>
+
+</div>
+
+<script>
+function updateClock(){
+
+    let now = new Date();
+
+    let h = now.getHours()%12;
+    let m = now.getMinutes();
+    let s = now.getSeconds();
+
+    let hDeg = h*30 + m*0.5;
+    let mDeg = m*6;
+    let sDeg = s*6;
+
+    document.getElementById("hour").style.transform =
+        `rotate(${hDeg}deg)`;
+
+    document.getElementById("minute").style.transform =
+        `rotate(${mDeg}deg)`;
+
+    document.getElementById("second").style.transform =
+        `rotate(${sDeg}deg)`;
+}
+
+setInterval(updateClock,1000);
+updateClock();
+</script>
+
+</body>
+</html>
