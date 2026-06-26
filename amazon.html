@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Amazon Clone</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+.navbar{
+    background:#131921;
+    color:white;
+    height:60px;
+    display:flex;
+    align-items:center;
+    justify-content:space-around;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:bold;
+}
+
+.search{
+    width:50%;
+    display:flex;
+}
+
+.search input{
+    width:100%;
+    padding:10px;
+    border:none;
+}
+
+.search button{
+    padding:10px 15px;
+    border:none;
+    background:orange;
+    cursor:pointer;
+}
+
+.hero{
+    height:300px;
+    background:url("https://images.unsplash.com/photo-1523275335684-37898b6baf30") center/cover;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    font-size:40px;
+    font-weight:bold;
+}
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+    padding:20px;
+    background:#e3e6e6;
+}
+
+.card{
+    background:white;
+    padding:15px;
+    text-align:center;
+    border-radius:10px;
+}
+
+.card img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+}
+
+.card h3{
+    margin:10px 0;
+}
+
+.card button{
+    background:#ffd814;
+    border:none;
+    padding:10px;
+    width:100%;
+    cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="logo">amazon</div>
+
+    <div class="search">
+        <input type="text" placeholder="Search Amazon">
+        <button>Search</button>
+    </div>
+
+    <div>Account</div>
+    <div>Cart 🛒</div>
+</div>
+
+<div class="hero">
+    Welcome to Amazon
+</div>
+
+<div class="products">
+
+    <div class="card">
+        <img src="headphone.jpg" width="200">
+        <h3>Headphones</h3>
+        <p>₹999</p>
+        <button>Add to Cart</button>
+    </div>
+
+    <div class="card">
+        <img src="watch.jpg" width="200">
+        <h3>Smart Watch</h3>
+        <p>₹1999</p>
+        <button>Add to Cart</button>
+    </div>
+
+    <div class="card">
+        <img src="laptop.jpg" width="200">
+        <h3>Laptop</h3>
+        <p>₹49999</p>
+        <button>Add to Cart</button>
+    </div>
+
+    <div class="card">
+        <img src="mobile.jpg" width="200">
+        <h3>Mobile</h3>
+        <p>₹14999</p>
+        <button>Add to Cart</button>
+    </div>
+</div>
+</body>
+</html>
